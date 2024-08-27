@@ -120,7 +120,7 @@ app.MapGet("/accessPatient", async (int patientID, int doctorID, AppDbContext db
         return Results.NotFound("Doctor not found.");
     }
 
-    // Check if doctor has access
+    // bool to check if doctor has access
     bool doctorHasAccess = patientAdmission.Doctors.Any(d => d.DoctorId == doctorID) &&
                            patientAdmission.Department == doctor.Department;
 
