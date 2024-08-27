@@ -195,9 +195,16 @@ app.MapGet("/allDocForPatient", async (int patientID, AppDbContext db) =>
     return Results.Ok(admission.Doctors);
 });
 
-
+// ----------------------------------------------------------------------------------------
+// Get a patient
 app.MapGet("/Patients", async (AppDbContext db) => await db.Patients.ToListAsync());
+
+// ----------------------------------------------------------------------------------------
+// Get a admission
 app.MapGet("/Admissions", async(AppDbContext db) => await db.Admissions.ToListAsync());
+
+// ----------------------------------------------------------------------------------------
+// Get a doctor
 app.MapGet("/Doctors", async (AppDbContext db) => await db.Doctors.ToListAsync());
 
 app.MapControllers();
